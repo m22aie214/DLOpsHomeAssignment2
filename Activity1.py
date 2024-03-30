@@ -2,26 +2,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define activation functions
-def sigmoidfns(x):
+def sigmoidfn(x):
     return 1 / (1 + np.exp(-x))
 
-def relufns(x):
+def relufn(x):
     return np.maximum(0, x)
 
-def leaky_relufns(x, alpha=0.1):
+def leaky_relufn(x, alpha=0.1):
     return np.where(x > 0, x, alpha * x)
 
-def tanhfns(x):
+def tanhfn(x):
     return np.tanh(x)
 
 # Generate x values
 x = np.linspace(-5, 5, 100)
 
 # Calculate y values for each activation function
-y_sigmoid = sigmoidfns(x)
-y_relu = relufns(x)
-y_leaky_relu = leaky_relufns(x)
-y_tanh = tanhfns(x)
+y_sigmoid = sigmoidfn(x)
+y_relu = relufn(x)
+y_leaky_relu = leaky_relufn(x)
+y_tanh = tanhfn(x)
 
 # Plot the activation functions
 plt.figure(figsize=(10, 6))
